@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using S7.Net;
 using System.Threading;
 
+
 namespace selfControl.controlUnits
 {
     public partial class ioMonitor : UserControl
@@ -23,15 +24,16 @@ namespace selfControl.controlUnits
         public string type;
 
 
+
         public ioMonitor()
         {
             InitializeComponent();
         }
+
+        selfControl.ioMonitor frm = new selfControl.ioMonitor();
+
         private void addValue_Click(object sender, EventArgs e)
-        {
-
-
-            selfControl.ioMonitor frm = new selfControl.ioMonitor();
+        {     
          
             DialogResult dialogResult = frm.ShowDialog();
 
@@ -160,6 +162,15 @@ namespace selfControl.controlUnits
 
 
 
+        //20241005 删除自定义控件
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            this.Parent.Controls.Remove(this);
+        }
+
+
+        #region 可拖拽控件 20241005
 
         private bool dragging = false;
         private Point dragCursorPoint;
@@ -194,9 +205,7 @@ namespace selfControl.controlUnits
                 dragging = false;
             }
         }
-
-
-
+        #endregion
 
     }
 }

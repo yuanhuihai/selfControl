@@ -46,8 +46,8 @@ namespace selfControl.controlUnits
                 this.label1.Text = moniorVari + "的实时曲线";
 
                 getPLCdata();
-                //refreshUI();
-                timer1.Start();
+                refreshUI();
+             
             
            
               
@@ -94,7 +94,7 @@ namespace selfControl.controlUnits
                     this.Invoke(new Action(() =>
                     {
 
-                   
+                        monitorCurve.Series[0].Points.AddY(abc);
 
                     }));
 
@@ -105,6 +105,11 @@ namespace selfControl.controlUnits
             });
         }
 
+        //20241005 删除自定义控件
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Parent.Controls.Remove(this);
+        }
 
 
 
@@ -150,14 +155,8 @@ namespace selfControl.controlUnits
         }
         #endregion
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
+    
 
-
-
-            monitorCurve.Series[0].Points.AddY(abc);
-          
-        
-        }
+   
     }
 }

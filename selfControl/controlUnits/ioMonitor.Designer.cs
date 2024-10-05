@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ioMonitor));
             this.addValue = new System.Windows.Forms.Button();
             this.labelValue = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.labelIP = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelInfo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // addValue
             // 
-            this.addValue.Location = new System.Drawing.Point(190, 102);
+            this.addValue.Location = new System.Drawing.Point(217, 101);
             this.addValue.Margin = new System.Windows.Forms.Padding(6);
             this.addValue.Name = "addValue";
             this.addValue.Size = new System.Drawing.Size(137, 46);
@@ -96,12 +99,24 @@
             this.labelInfo.Text = "变量名称";
             this.labelInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(315, 1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(46, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // ioMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.addValue);
             this.Controls.Add(this.labelValue);
             this.Controls.Add(this.label9);
@@ -110,6 +125,7 @@
             this.Controls.Add(this.labelInfo);
             this.Name = "ioMonitor";
             this.Size = new System.Drawing.Size(360, 180);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +139,6 @@
         private System.Windows.Forms.Label labelIP;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelInfo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
